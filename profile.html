@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Doha Clinic - User Profile</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>DOHA CLINIC</h1>
+        </header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="./dr home.html">Request Supervisor</a></li>
+                <li><a href="./status.html">Request Status</a></li>
+                <li><a href="./dr history.html">Request History</a></li>
+                <li><a href="profile.html" class="active">profile</a></li>
+                <li class="notification-item">
+                    <div class="notification-icon" id="notificationIcon">
+                        <i class="fas fa-bell" style="color: #ffffff; font-size: 1.2rem; cursor: pointer;"></i>
+                        <span class="notification-count" id="notificationCount"></span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h3>Notifications</h3>
+                                <button id="markAllRead">Mark all as read</button>
+                            </div>
+                            <div class="notification-list" id="notificationList">
+                                <!-- Notifications will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <main class="main profile-grid">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <h2>Welcome, <span id="profile-name"></span></h2>
+                </div>
+                <div class="profile-details">
+                    <div class="profile-detail-item">
+                        <span class="profile-detail-label">Email:</span>
+                        <span class="profile-detail-value" id="profile-email"></span>
+                    </div>
+                    <div class="profile-detail-item">
+                        <span class="profile-detail-label">Role:</span>
+                        <span class="profile-detail-value" id="profile-role"></span>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <a href="./change password.html" class="profile-action-button">
+                        Change Password
+                    </a>
+                    <button id="logout-button" class="logout-button">
+                        Logout
+                    </button>
+                    <a href="./dr home.html" class="back-to-login">
+                        ← Back to Home
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="profile.js"></script>
+    <script type="module" src="./drHome.js"></script>
+</body>
+</html>

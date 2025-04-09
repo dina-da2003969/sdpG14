@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Doha Clinic - Login</title>
+    <!-- Add Firebase CDN Scripts here -->
+    <script type="module">
+        // Import Firebase modules from the CDN
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyCOD_CNe3AJyyW0welsYAc6v7_xT8UjJmI",
+            authDomain: "doha-clinic-32465.firebaseapp.com",
+            databaseURL: "https://doha-clinic-32465-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "doha-clinic-32465",
+            storageBucket: "doha-clinic-32465.firebasestorage.app",
+            messagingSenderId: "424118028422",
+            appId: "1:424118028422:web:5d40e912977d5456c62907"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>DOHA CLINIC</h1>
+        </header>
+        
+        <main class="main">
+            <form class="form" id="login-form">
+                <h2 class="title">Login</h2>
+                
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input 
+                        type="email" 
+                        id="username" 
+                        name="username"
+                        class="form-input"
+                        placeholder="someone@example.com" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        name="password" 
+                        class="form-input"
+                        required
+                    >
+                </div>
+
+                <div class="form-actions">
+                    <div class="button-group">
+                        <button type="submit" class="confirm-button">
+                            Login
+                        </button>
+                        <button type="reset" class="reset-button">
+                            Reset
+                        </button>
+                    </div>
+                    
+                    <div class="links-group">
+                        <a href="./change forgoten pass.html" class="forget-password">Forgot Password?</a>
+                        <a href="./change password.html" class="change-password">Change Password</a>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script type="module" src="./login.js"></script>
+</body>
+</html>

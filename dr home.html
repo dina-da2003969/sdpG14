@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Doha Clinic - Request Supervisor</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <h1>DOHA CLINIC</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./dr home.html" class="active">Request Supervisor</a></li>
+                    <li><a href="./status.html">Request Status</a></li>
+                    <li><a href="./dr history.html">Request History</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li class="notification-item">
+                        <div class="notification-icon" id="notificationIcon">
+                            <i class="fas fa-bell" style="color: #ffffff; font-size: 1.2rem; cursor: pointer;"></i>
+                            <span class="notification-count" id="notificationCount"></span>
+                            <div class="notification-dropdown" id="notificationDropdown">
+                                <div class="notification-header">
+                                    <h3>Notifications</h3>
+                                    <button id="markAllRead">Mark all as read</button>
+                                </div>
+                                <div class="notification-list" id="notificationList">
+                                    <!-- Notifications will be dynamically added here -->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="logout-button" class="logout-button">
+                            Logout
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="form">
+                <h2>Request Supervisor Assistance</h2>
+                <form id="requestForm">
+                    <div class="form-group">
+                        <label for="nameSelect">Select Supervisor *</label>
+                        <select id="nameSelect" class="form-select" required>
+                            <option value="">Select supervisor name</option>
+                            <option value="Hani Nazzal">Dr. Hani Nazzal</option>
+                            <option value="Wadha Labda">Dr. Wadha Labda</option>
+                            <option value="Rehab Duwairi">Dr. Rehab Duwairi</option>
+                            <option value="Mohamed Saleh">Dr. Mohamed Saleh</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="textbox1">Cubicle Number *</label>
+                        <input 
+                            type="text" 
+                            id="textbox1" 
+                            class="form-input" 
+                            placeholder="Enter cubicle number (e.g., A123)"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="textbox2">Patient's Status</label>
+                        <textarea 
+                            id="textbox2" 
+                            class="form-textarea" 
+                            placeholder="Please describe the patient's condition and reason for supervisor assistance"
+                        ></textarea>
+                    </div>
+                    <div class="button-wrapper">
+                        <button class="request-button" id="submitButton">
+                            Submit Request
+                        </button>
+                        <div id="loading-indicator" style="display: none;">
+                            Submitting request...
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Add Firebase Scripts -->
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./drHome.js"></script>
+    <script type="module" src="./notifications.js"></script>
+    <script type="module" src="./logout.js"></script>
+</body>
+</html>

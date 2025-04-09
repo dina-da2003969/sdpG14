@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Doha Clinic - Supervisor History</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>DOHA CLINIC</h1>
+        </header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="./supervisorHome.html">Notifications</a></li>
+                <li><a href="./super history.html" class="active">Request History</a></li>
+                <li><a href="./supervisorProfile.html">Profile</a></li>
+                <li class="notification-item">
+                    <div class="notification-icon" id="notificationIcon">
+                        <i class="fas fa-bell" style="color: #ffffff; font-size: 1.2rem; cursor: pointer;"></i>
+                        <span class="notification-count" id="notificationCount"></span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h3>Notifications</h3>
+                                <button id="markAllRead">Mark all as read</button>
+                            </div>
+                            <div class="notification-list" id="notificationList">
+                                <!-- Notifications will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </li> 
+                <li>
+                    <button id="logout-button" class="logout-button">
+                        Logout
+                    </button>
+                </li>           
+            </ul>
+        </nav>
+        <main class="main">
+            <div class="table-container">
+                <h2 class="section-title">Request History</h2>
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="search-requests" 
+                        placeholder="Search requests..."
+                    >
+                    <span class="search-icon">🔍</span>
+                </div>
+                <table class="notification-table">
+                    <thead>
+                        <tr>
+                            <th>Dr Name</th>
+                            <th>Cubical Number</th>
+                            <th>Details</th>
+                            <th>ETA</th>
+                            <th>Response</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example rows will be populated by JavaScript -->
+                        <tr id="no-data-row">
+                            <td colspan="5" class="no-data">No request history found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+<script type="module" src="superHistory.js"></script>
+<script type="module" src="./supervisorHome.js"></script>
+<script type="module" src="./logout.js"></script>
+</html>
